@@ -54,6 +54,15 @@ export function resetRows(key: string): EntryRow[] {
   return rows
 }
 
+/**
+ * 应急演练链路（pipeline）直接读写 localStorage 的原始键，
+ * 绕过了本模块的内存缓存；链路跑完后必须调用这里让缓存失效，
+ * 页面再读时拿到的就是刚落库的那份数据。
+ */
+export function invalidateCache(): void {
+  cache = null
+}
+
 export function storageKey(): string {
   return STORAGE_KEY
 }

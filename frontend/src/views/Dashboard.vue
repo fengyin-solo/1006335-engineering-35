@@ -14,6 +14,14 @@
         <span class="stat-label">{{ card.label }}</span>
         <strong class="stat-value">{{ card.value }}</strong>
       </article>
+      <article class="stat-card" :class="{ warn: emergency.issueCount > 0 }">
+        <span class="stat-label">演练自检问题（与演练页同源）</span>
+        <strong class="stat-value">{{ emergency.issueCount }}</strong>
+      </article>
+      <article class="stat-card" :class="{ warn: !emergency.todoConsistent }">
+        <span class="stat-label">演练评估待办（已评估/待办）</span>
+        <strong class="stat-value">{{ emergency.evaluated }}/{{ emergency.todoCount }}</strong>
+      </article>
     </div>
     <table class="data-table">
       <thead>
@@ -37,17 +45,28 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 
-import { loadOverview } from '@/api/local-service'
+import { bootstrapEmergency, emergencyOverview, loadOverview } from '@/api/local-service'
 import type { OverviewResult } from '@/data/types'
+import type { EmergencyMetrics } from '@/data/emergency/pipeline'
 
 const cards = ref<OverviewResult['cards']>([])
 const moduleRows = ref<OverviewResult['modules']>([])
+const emergency = ref<EmergencyMetrics>(emergencyOverview())
 
 function refresh() {
+  // 先跑幂等初始化链路，再从同一份落库数据取数：概览和演练看板永远一个数。
+  bootstrapEmergency()
   const payload = loadOverview()
   cards.value = payload.cards
   moduleRows.value = payload.modules
+  emergency.value = emergencyOverview()
 }
 
 onMounted(refresh)
 </script>
+
+<style scoped>
+.stat-card.warn .stat-value {
+  color: #cf1322;
+}
+</style>

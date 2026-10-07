@@ -15,6 +15,7 @@ const Leak = () => import('@/views/leak/index.vue')
 const Maintenance = () => import('@/views/maintenance/index.vue')
 const Hazard = () => import('@/views/hazard/index.vue')
 const Emergency = () => import('@/views/emergency/index.vue')
+const EmergencyTodos = () => import('@/views/emergency-todos/index.vue')
 const Energy = () => import('@/views/energy/index.vue')
 const Device = () => import('@/views/device/index.vue')
 const Entryapprove = () => import('@/views/entryapprove/index.vue')
@@ -38,6 +39,7 @@ const router = createRouter({
     { path: '/maintenance', name: 'maintenance', component: Maintenance },
     { path: '/hazard', name: 'hazard', component: Hazard },
     { path: '/emergency', name: 'emergency', component: Emergency },
+    { path: '/emergency-todos', name: 'emergency-todos', component: EmergencyTodos },
     { path: '/energy', name: 'energy', component: Energy },
     { path: '/device', name: 'device', component: Device },
     { path: '/entryapprove', name: 'entryapprove', component: Entryapprove },
