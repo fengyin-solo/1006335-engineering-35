@@ -1,0 +1,356 @@
+{
+  "meta": {
+    "seedRevision": 1,
+    "schemaVersion": 2,
+    "generatedAt": "2026-10-06T08:00:00+08:00",
+    "checksum": "668c66c69aac237ace831499961157e1fb12180303c49c6cf1cbae4d77f34397",
+    "checksumAlgorithm": "sha256",
+    "sampleCount": 12,
+    "legacyCount": 13
+  },
+  "bundle": {
+    "seedRevision": 1,
+    "schemaVersion": 2,
+    "generatedAt": "2026-10-06T08:00:00+08:00",
+    "samples": [
+      {
+        "id": 1,
+        "code": "EMER-0001",
+        "scene": "进廊作业人员失联搜救",
+        "crew": [
+          "安保疏散班",
+          "综合机电乙班"
+        ],
+        "plannedDate": "2024-01-05",
+        "durationMinutes": 45,
+        "conclusion": "响应及时、处置流程符合预案，评估通过",
+        "organizer": "许文婷",
+        "status": "已评估",
+        "source": "sample",
+        "version": 1,
+        "createdAt": "2026-10-06T08:00:00+08:00",
+        "updatedAt": "2026-10-06T08:00:00+08:00"
+      },
+      {
+        "id": 2,
+        "code": "EMER-0002",
+        "scene": "结构变形超限封舱演练",
+        "crew": [
+          "综合机电乙班",
+          "安保疏散班"
+        ],
+        "plannedDate": "2024-03-12",
+        "durationMinutes": 60,
+        "conclusion": "物资调用存在脱节，评估有条件通过，下月复演",
+        "organizer": "郑海峰",
+        "status": "已评估",
+        "source": "sample",
+        "version": 1,
+        "createdAt": "2026-10-06T08:00:00+08:00",
+        "updatedAt": "2026-10-06T08:00:00+08:00"
+      },
+      {
+        "id": 3,
+        "code": "EMER-0003",
+        "scene": "综合舱电力电缆起火应急处置",
+        "crew": [
+          "消防抢险班",
+          "应急通讯班"
+        ],
+        "plannedDate": "2024-05-19",
+        "durationMinutes": 135,
+        "conclusion": "协同基本顺畅，个别班组到位偏慢，评估通过并限期整改",
+        "organizer": "孙立群",
+        "status": "已评估",
+        "source": "sample",
+        "version": 1,
+        "createdAt": "2026-10-06T08:00:00+08:00",
+        "updatedAt": "2026-10-06T08:00:00+08:00"
+      },
+      {
+        "id": 4,
+        "code": "EMER-0004",
+        "scene": "有害气体超标人员搜救",
+        "crew": [
+          "应急通讯班",
+          "消防抢险班"
+        ],
+        "plannedDate": "2024-07-06",
+        "durationMinutes": 150,
+        "conclusion": "",
+        "organizer": "周建国",
+        "status": "已取消",
+        "source": "sample",
+        "version": 1,
+        "createdAt": "2026-10-06T08:00:00+08:00",
+        "updatedAt": "2026-10-06T08:00:00+08:00"
+      },
+      {
+        "id": 5,
+        "code": "EMER-0005",
+        "scene": "雨水倒灌抽排与人员撤离",
+        "crew": [
+          "综合机电甲班",
+          "通风排水班"
+        ],
+        "plannedDate": "2024-09-13",
+        "durationMinutes": 105,
+        "conclusion": "协同基本顺畅，个别班组到位偏慢，评估通过并限期整改",
+        "organizer": "许文婷",
+        "status": "已评估",
+        "source": "sample",
+        "version": 1,
+        "createdAt": "2026-10-06T08:00:00+08:00",
+        "updatedAt": "2026-10-06T08:00:00+08:00"
+      },
+      {
+        "id": 6,
+        "code": "EMER-0006",
+        "scene": "极端暴雨廊体封堵演练",
+        "crew": [
+          "通风排水班",
+          "综合机电乙班"
+        ],
+        "plannedDate": "2025-11-20",
+        "durationMinutes": 120,
+        "conclusion": "响应及时、处置流程符合预案，评估通过",
+        "organizer": "郑海峰",
+        "status": "已评估",
+        "source": "sample",
+        "version": 1,
+        "createdAt": "2026-10-06T08:00:00+08:00",
+        "updatedAt": "2026-10-06T08:00:00+08:00"
+      },
+      {
+        "id": 7,
+        "code": "EMER-0007",
+        "scene": "通风机组故障应急送风",
+        "crew": [
+          "安保疏散班",
+          "消防抢险班"
+        ],
+        "plannedDate": "2025-01-07",
+        "durationMinutes": 75,
+        "conclusion": "物资调用存在脱节，评估有条件通过，下月复演",
+        "organizer": "孙立群",
+        "status": "已评估",
+        "source": "sample",
+        "version": 1,
+        "createdAt": "2026-10-06T08:00:00+08:00",
+        "updatedAt": "2026-10-06T08:00:00+08:00"
+      },
+      {
+        "id": 8,
+        "code": "EMER-0008",
+        "scene": "燃气舱可燃气体泄漏疏散",
+        "crew": [
+          "综合机电乙班",
+          "应急通讯班"
+        ],
+        "plannedDate": "2025-03-14",
+        "durationMinutes": 90,
+        "conclusion": "",
+        "organizer": "周建国",
+        "status": "已取消",
+        "source": "sample",
+        "version": 1,
+        "createdAt": "2026-10-06T08:00:00+08:00",
+        "updatedAt": "2026-10-06T08:00:00+08:00"
+      },
+      {
+        "id": 9,
+        "code": "EMER-0009",
+        "scene": "进廊作业人员失联搜救",
+        "crew": [
+          "消防抢险班",
+          "综合机电甲班"
+        ],
+        "plannedDate": "2025-05-21",
+        "durationMinutes": 45,
+        "conclusion": "物资调用存在脱节，评估有条件通过，下月复演",
+        "organizer": "许文婷",
+        "status": "已评估",
+        "source": "sample",
+        "version": 1,
+        "createdAt": "2026-10-06T08:00:00+08:00",
+        "updatedAt": "2026-10-06T08:00:00+08:00"
+      },
+      {
+        "id": 10,
+        "code": "EMER-0010",
+        "scene": "雨水倒灌抽排与人员撤离",
+        "crew": [
+          "消防抢险班",
+          "综合机电乙班"
+        ],
+        "plannedDate": "2025-07-08",
+        "durationMinutes": 75,
+        "conclusion": "协同基本顺畅，个别班组到位偏慢，评估通过并限期整改",
+        "organizer": "孙立群",
+        "status": "已评估",
+        "source": "sample",
+        "version": 1,
+        "createdAt": "2026-10-06T08:00:00+08:00",
+        "updatedAt": "2026-10-06T08:00:00+08:00"
+      },
+      {
+        "id": 11,
+        "code": "EMER-0011",
+        "scene": "有害气体超标人员搜救",
+        "crew": [
+          "综合机电乙班",
+          "综合机电甲班"
+        ],
+        "plannedDate": "2026-09-15",
+        "durationMinutes": 120,
+        "conclusion": "",
+        "organizer": "郑海峰",
+        "status": "待组织",
+        "source": "sample",
+        "version": 1,
+        "createdAt": "2026-10-06T08:00:00+08:00",
+        "updatedAt": "2026-10-06T08:00:00+08:00"
+      },
+      {
+        "id": 12,
+        "code": "EMER-0012",
+        "scene": "通风机组故障应急送风",
+        "crew": [
+          "安保疏散班",
+          "通风排水班"
+        ],
+        "plannedDate": "2026-11-22",
+        "durationMinutes": 105,
+        "conclusion": "",
+        "organizer": "许文婷",
+        "status": "演练中",
+        "source": "sample",
+        "version": 1,
+        "createdAt": "2026-10-06T08:00:00+08:00",
+        "updatedAt": "2026-10-06T08:00:00+08:00"
+      }
+    ],
+    "legacy": [
+      {
+        "legacyCode": "OLD-2023-001",
+        "inspectDate": "2023-04-18",
+        "scene": "燃气舱泄漏拉动演练",
+        "crew": "消防抢险班、通风排水班",
+        "durationMinutes": 90,
+        "conclusion": "旧台账结论：处置得当，资料归档",
+        "organizer": "周建国",
+        "rawStatus": "已完成"
+      },
+      {
+        "legacyCode": "OLD-2023-002",
+        "inspectDate": "2023-06-22",
+        "scene": "雨水倒灌抽排演练",
+        "crew": "综合机电甲班",
+        "durationMinutes": 75,
+        "organizer": "孙立群",
+        "rawStatus": "已完成"
+      },
+      {
+        "legacyCode": "OLD-2023-002",
+        "inspectDate": "2023-09-01",
+        "scene": "雨水倒灌抽排演练（重复登记）",
+        "crew": "综合机电甲班",
+        "durationMinutes": 80,
+        "conclusion": "重复登记行，迁移应跳过",
+        "organizer": "孙立群",
+        "rawStatus": "已完成"
+      },
+      {
+        "legacyCode": "OLD-2024-001",
+        "inspectDate": "2024-03-15",
+        "crew": "应急通讯班",
+        "durationMinutes": 60,
+        "organizer": "郑海峰",
+        "rawStatus": "已完成"
+      },
+      {
+        "legacyCode": "OLD-2024-002",
+        "inspectDate": "2024-05-20",
+        "scene": "进廊作业失联搜救",
+        "crew": "",
+        "durationMinutes": 120,
+        "organizer": "许文婷",
+        "rawStatus": "已完成"
+      },
+      {
+        "legacyCode": "OLD-2024-003",
+        "scene": "结构变形封舱演练",
+        "crew": "综合机电乙班",
+        "durationMinutes": 95,
+        "organizer": "周建国",
+        "rawStatus": "已完成"
+      },
+      {
+        "legacyCode": "OLD-2025-001",
+        "inspectDate": "2025-02-11",
+        "scene": "极端暴雨廊体封堵",
+        "crew": "综合机电甲班、安保疏散班",
+        "durationMinutes": 105,
+        "organizer": "郑海峰",
+        "rawStatus": "完成"
+      },
+      {
+        "legacyCode": "OLD-2025-002",
+        "inspectDate": "2025-08-09",
+        "scene": "电缆起火处置",
+        "crew": "消防抢险班",
+        "durationMinutes": 50,
+        "conclusion": "旧台账结论：问题较多需复演",
+        "organizer": "孙立群",
+        "rawStatus": "已完成"
+      },
+      {
+        "legacyCode": "OLD-2026-001",
+        "inspectDate": "",
+        "scene": "有害气体搜救演练",
+        "crew": "通风排水班",
+        "durationMinutes": 65,
+        "organizer": "许文婷",
+        "rawStatus": "已完成"
+      },
+      {
+        "legacyCode": "OLD-2026-002",
+        "inspectDate": "2026-01-17",
+        "scene": "通风故障应急送风",
+        "crew": "综合机电乙班",
+        "durationMinutes": 85,
+        "conclusion": "旧台账结论：合格",
+        "organizer": "周建国",
+        "rawStatus": "演练中"
+      },
+      {
+        "legacyCode": "EMER-0003",
+        "inspectDate": "2026-02-03",
+        "scene": "编号撞车的存量行",
+        "crew": "安保疏散班",
+        "durationMinutes": 40,
+        "conclusion": "试图覆盖样例结论，必须被挡住",
+        "organizer": "孙立群",
+        "rawStatus": "已完成"
+      },
+      {
+        "legacyCode": "OLD-2026-003",
+        "inspectDate": "2026-05-30",
+        "scene": "汛期综合联动演练",
+        "crew": "综合机电甲班、消防抢险班、应急通讯班",
+        "durationMinutes": 135,
+        "organizer": "郑海峰",
+        "rawStatus": "已完成"
+      },
+      {
+        "legacyCode": "OLD-2026-004",
+        "inspectDate": "2026-10-06",
+        "scene": "切换后首次拉动演练",
+        "crew": "综合机电乙班、通风排水班",
+        "durationMinutes": 70,
+        "organizer": "许文婷",
+        "rawStatus": "已完成"
+      }
+    ]
+  }
+}

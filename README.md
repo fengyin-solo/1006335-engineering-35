@@ -69,3 +69,45 @@ npm run build
   `frontend/src/data/seed.ts`。
 - 状态流转只允许在 `local-service.ts` 里改，页面组件不做业务判断。
 - 想回到初始数据：清掉浏览器里 `urban-utility-tunnel:entries` 这一项，或调用 `resetModule(模块)`。
+
+## 应急演练管理：可重建、可迁移的一条链路
+
+应急演练不走上面的通用示例数据，单独有一条「生成 → 校验 → 迁移 → 落库 → 自检」的链路，
+代码在 `frontend/src/domain/emergency/`，Node 初始化脚本与浏览器运行时共用同一份纯 TS 引擎，
+不允许两边各算各的。
+
+### 固定口径（`src/domain/emergency/policy.ts`）
+
+| 口径 | 取值 / 规则 |
+| --- | --- |
+| 样例稳定性 | 演练编号做 FNV-1a 哈希取模决定场景/班组/时长/状态；无随机数、无系统时间，重建逐字节一致 |
+| 计划日期 | 样例由编号算出；**存量数据按巡检日期整体搬入计划日期**，并留 `legacyInspectDate/legacyCode` 痕迹 |
+| 判重字段 | **演练编号**。存量内部同号保留巡检日期最早的一条，后来的整笔跳过并记账；与在库（含样例）撞号，存量行整笔跳过，在库记录与结论原封不动 |
+| 新口径切换日 | `2026-10-06`（`CUTOVER_DATE`）。切换日**之前**缺结论的已评估老演练，按统一旧口径回补（`LEGACY_BACKFILL_CONCLUSION`）；切换日**当天及以后**缺结论一律不回补，由自检挑出「结论与状态顶牛」交人工处理 |
+| 老数据结论 | 原有结论一律沿用，初始化/迁移绝不覆盖 |
+| 岗位把关 | 只有「组织人员」能提交评估结论、组织/取消演练；参演班组、观摩人员只读，越权提交整笔驳回 |
+| 并发 | 每条记录带 `version` 乐观锁；同一时刻两笔提交都基于旧版本，先到的入账，后到的整笔回退（演练与待办同一事务） |
+| 处置待办 | 每落一条评估结论，向「处置待办」入口回写一条；已评估有结论条数永远等于待办条数 |
+| 自检三类 | 演练编号撞车 / 参与班组缺人 / 评估结论与演练状态顶牛，逐条带缘由；页面条数取自 `selectCounts().findings`，概览看板同数 |
+| 缺失项 | 存量行缺演练编号/巡检日期/演练场景时不臆造，逐条挂「缺项待确认」等人工确认 |
+
+### 脚本与产物（构建部署共用同一条链路）
+
+```bash
+cd frontend
+npm ci                 # 严格按 package-lock.json，依赖版本全部钉死
+npm run emergency:generate  # 确定性生成 src/domain/emergency/seed.json（带 sha256 校验和）
+npm run emergency:verify    # 重新生成逐字节比对 + bootstrap + 自检，条数不一致即非零退出
+npm test               # 27 组用例 + 浏览器仓库冒烟
+npm run build          # = generate → verify → vue-tsc 类型检查 → vite build
+```
+
+- `package-lock.json` 已入库，含全平台可选依赖；本地、CI、Docker 都用 `npm ci`。
+- `src/domain/emergency/seed.json` 是构建产物也是校验基线，随仓库固定；
+  浏览器导入的就是它，因此**本地与线上落库的那份数据一致**。
+- Docker 镜像（`frontend/Dockerfile`，多阶段）与 `docker compose build` 内部执行同一条
+  `npm ci && npm run build`，最终是 nginx 托管的纯静态产物。
+- 浏览器侧持久化键：`urban-utility-tunnel:emergency:v2`。每次打开页面都会幂等执行一次
+  bootstrap：样例只补缺编号、存量按迁移账续跑；中途中断已落账的行不回滚，下次接着做。
+- 页面顶部可切换岗位演示权限；「重新初始化（幂等）」按钮可反复执行，已评估结论不会被冲掉。
+
